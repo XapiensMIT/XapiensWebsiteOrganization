@@ -49,10 +49,6 @@ import Brandname                from './Brandname';
                  page: () => {return '/people'}
              },
              {
-                 text: 'Calendar',
-                 page: () => {return '/calendar'}
-             },
-             {
                  text: 'Opportunities',
                  page: () => {return '/opportunities'}
              },
@@ -64,22 +60,11 @@ import Brandname                from './Brandname';
 
          return(
              <Container>
-
-                 <Button
-                     margin={false}
-                     hover={true}
-                     radius={50}
-                     height={70}
-                     width={120}
-                     fontColor={'#2B0E4C'}
-                     leftcolor={'#FFFFFF'}
-                     rightcolor={'#FFFFFF'}>
-                     // <Brandname/>
+                 <Link to={'/about'}>
                      <Illustration
                          src="https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/logoo.png?alt=media&token=388eea1b-c414-44f6-83f1-e85a9b955dbc"
                          alt='Xapiens logo' />
-                     <Link to={navigation.page()}/>
-                 </Button>
+                 </Link>
                  {
                      navigation.map(navigation => {
                          return (
@@ -152,5 +137,5 @@ import Brandname                from './Brandname';
   `;
   const Illustration = styled.img`
      position: relative;
-     height: 90vh;
+     height: 70px;
   `;

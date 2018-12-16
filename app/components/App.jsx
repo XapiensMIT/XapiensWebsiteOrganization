@@ -25,7 +25,6 @@ import Brandname                from './Brandname';
 import HomePage                 from './Homepage';
 import About                    from './About';
 import People                   from './People';
-import Calendar                 from './Calendar';
 import Opportunities            from './Opportunities';
 import Sponsorship              from './Sponsorship';
 import Contact                  from './Contact';
@@ -74,11 +73,6 @@ initReactFastclick();
                          <Route path={`/people`} render={(props) => {
                              return (
                                  <People {...props} />
-                             );
-                         }}/>
-                         <Route path={`/calendar`} render={(props) => {
-                             return (
-                                 <Calendar {...props} />
                              );
                          }}/>
                          <Route path={`/opportunities`} render={(props) => {

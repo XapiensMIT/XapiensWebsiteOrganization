@@ -1,11 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Load *package.json* so we can use `dependencies` from there
 const pkg = require('./package.json');
-
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -16,115 +19,135 @@ const PATHS = {
     node: path.join(__dirname, 'node_modules')
 };
 
-process.env.BABEL_ENV = TARGET;
-
 const common = {
-// Entry accepts a path or an object of entries. We'll be using the
-// latter form given it's convenient with more complex configurations.
+    // Entry accepts a path or an object of entries. We'll be using the
+    // latter form given it's convenient with more complex configurations.
     entry: {
-        app: PATHS.app
+        app: path.join(PATHS.app, 'index.jsx')
     },
-
-    node: {
-        fs: "empty"
-    },
-    // Add resolve.extensions.
-    // '' is needed to allow imports without an extension.
-    // Note the .'s before extensions as it will fail to match without!!!
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['*', '.js', '.jsx']
     },
     output: {
         path: PATHS.build,
         // Output using entry name
-        filename: '[name].js'
-    }, module: {
-        loaders: [
+        filename: '[name].js',
+        globalObject: "this"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                include: PATHS.app,
+                exclude: PATHS.node,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
             {
                 // Test expects a RegExp! Note the slashes!
                 test: /\.css$/,
-                loaders: ['style', 'css'],
                 // Include accepts either a path or an array of paths.
-                include: PATHS.app
-            },
-            // Set up jsx. This accepts js too thanks to RegExp
-            {
-                test: /\.jsx?$/,
-                // Enable caching for improved performance during development
-                // It uses default OS directory by default. If you need something
-                // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-                loaders: ['babel?cacheDirectory'],
-                // Parse only app files! Without this it will go through entire project.
-                // In addition to being slow, that will most likely result in an error.
-                include: PATHS.app
+                include: PATHS.app,
+                use: [
+                    {loader: "style-loader"},
+                    {loader: "css-loader"}
+                ]
             },
             {
-                test: /\.(woff|ttf|eot|svg|otf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
-                loader: 'url?limit=200000',
-                include: PATHS.fonts
+                test: /\.(png|jpg|svg)$/,
+                include: PATHS.images,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            emitFile: true,
+                            name: '[name].[ext]',
+                            outputPath: '/assets/images/'
+                        }
+                    }
+                ]
             },
             {
-                test: /\.(jpg|png|svg)$/,
-                loader: 'file?name=/assets/images/[name].[ext]',
-                include: PATHS.images
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                    }
+                ]
             },
             {
-                test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
-                loader: 'imports?define=>false&this=>window'
-            },
-            {
-                test:/\.json$/,
-                loader: "json-loader"
+                test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: '/assets/fonts/'
+                    }
+                }]
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(PATHS.app, '/index.html'),
+        })
+    ]
 };
 
 // Default configuration
-if(TARGET === 'start' || !TARGET) {
+if (TARGET === 'start' || !TARGET) {
     module.exports = merge(common, {
         devtool: 'eval-source-map',
         devServer: {
-            contentBase: PATHS.build,
+            contentBase: './build/',
+            watchContentBase: true,
+            compress: true,
             // Enable history API fallback so HTML5 History API based
             // routing works. This is a good default that will come
             // in handy in more complicated setups.
             historyApiFallback: true,
-            hot: true,
-            inline: true,
-            progress: true,
-            // Display only errors to reduce the amount of output.
-            stats: 'errors-only',
-            // Parse host and port from env so this is easy to customize.
-            //
-            // If you use Vagrant or Cloud9, set
-            // host: process.env.HOST || '0.0.0.0';
-            //
-            // 0.0.0.0 is available to all network devices unlike default
-            // localhost
-            host: process.env.HOST,
-            port: process.env.PORT
-        }, plugins: [
-            new webpack.DefinePlugin({
-                'process.env.NODE_ENV': '"development"'
-            }),
-            new webpack.HotModuleReplacementPlugin(),
-            new NpmInstallPlugin({
-                save: true // --save
-            })
-        ]
+        }
     });
 }
-if(TARGET === 'build') {
+
+if (TARGET === 'build') {
     module.exports = merge(common, {
-        // Define vendor entry point needed for splitting
-        entry: {
-            vendor: Object.keys(pkg.dependencies).filter(function(v) {
-                // Exclude alt-utils as it won't work with this setup
-                // due to the way the package has been designed
-                // (no package.json main).
-                return v !== 'alt-utils';
-            }),
+        optimization: {
+            minimizer: [
+                new TerserPlugin({
+                  terserOptions: {
+                    ecma: undefined,
+                    warnings: false,
+                    parse: {},
+                    compress: {},
+                    mangle: true, // Note `mangle.properties` is `false` by default.
+                    module: false,
+                    output: null,
+                    toplevel: false,
+                    nameCache: null,
+                    ie8: false,
+                    keep_classnames: undefined,
+                    keep_fnames: false,
+                    safari10: false
+                },
+                extractComments: true,
+                warningsFilter: (warning, source) => {
+                    return false;
+                  },
+              })
+            ],
+            splitChunks: {
+                cacheGroups: {
+                    vendor: {
+                        chunks: 'initial',
+                        name: 'vendor',
+                        test: 'vendor',
+                        enforce: true
+                    },
+                }
+            },
+            runtimeChunk: true
         },
         plugins: [
             // Setting DefinePlugin affects React library size!
@@ -136,10 +159,11 @@ if(TARGET === 'build') {
                 // development target to force NODE_ENV to development mode
                 // no matter what
             }),
-            new webpack.optimize.UglifyJsPlugin({
-                compress: {
-                    warnings: false
-                }
+            new webpack.NoEmitOnErrorsPlugin(),
+            new CompressionPlugin({
+              algorithm: "gzip",
+              test: /\.js$|\.css$|\.html$/,
+              minRatio: 0
             })
         ]
     });

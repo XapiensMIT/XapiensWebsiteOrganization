@@ -1,12 +1,12 @@
 import { injectGlobal }         from 'styled-components';
 
 // Montserrat
-import montserratRegular            from './assets/fonts/montserrat/montserrat-Regular.otf';
-import montserratExtraLight          from './assets/fonts/montserrat/montserrat-ExtraLight.otf';
+import montserratRegular            from './assets/fonts/montserrat-Regular.otf';
+import montserratExtraLight          from './assets/fonts/montserrat-ExtraLight.otf';
 
 // Nexa
-import nexaLight            from './assets/fonts/nexa/nexa-Light.ttf';
-import nexaRegular          from './assets/fonts/nexa/nexa.ttf';
+import nexaLight            from './assets/fonts/nexa-Light.ttf';
+import nexaRegular          from './assets/fonts/nexa.ttf';
 
 
 

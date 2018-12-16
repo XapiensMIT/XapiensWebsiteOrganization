@@ -88,11 +88,6 @@ import Brandname                from './Brandname';
          ]
          let midfooter = [
              {
-                 text: 'Calendar',
-                 internal: true,
-                 page: () => {return '/calendar'}
-             },
-             {
                  text: 'Opportunities',
                  internal: true,
                  page: () => {return '/opportunities'}
