@@ -16,3 +16,5 @@ reports
 firebase_config.json
 /functions/words_api_config.json
 firebase-debug.log
+
+.DS_Store
