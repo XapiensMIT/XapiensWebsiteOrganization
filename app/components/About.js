@@ -34,13 +34,15 @@ export default class About extends React.Component {
                 background={"https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fwhite-13.jpg?alt=media&token=e231f298-ff5f-4a13-896a-b3712a0e4287"}>
                 <Navigation/>
                 <Block>
-                    <Header> Vision </Header>
+                    <Header>Vision</Header>
                     <TextBody>
-                        Xapiens at MIT aims to increase the speed of innovation in human enhancement by building relationships between the members of MIT community of multiple disciplines and thought-leaders in academia, industry, and business.<br /><br />
+                      <p>Xapiens aims to provide a community for students who have an interest in transhumanism through social events, seminars, technical projects and outreach programs. We aim to empower the members of the MIT community to learn, participate and make an impact in the many fields of human enhancement.</p>
 
-                        We strive to serve the MIT community by fostering the development of the knowledge, skills and networks of the Xapiensites in order to prepare leagues of specialists in related fields.<br /><br />
+                      <p>Xapiens brings together students from every discipline and develops their technical and leadership skills by providing opportunities to present their work, attend seminars and conferences, and connect with relevant professionals. Through meeting academic and professional leaders of the field, Xapiens aims to help student to become equipped with the skill sets that will help them in their future transhumanism-related careers in industry, academia or business.</p>
 
-                        We endeavour to foster the open discussion around the topic of human enhancement, rise of curiosity and interest, research and development among students as well as democratized open access to the available technology and expertise to wider public via serving as a local alias in the field of human enhancement.<br /><br />
+                      <p>We endeavor to foster an open discussion around the topic of human enhancement, stimulate the research and development among students, and establish democratized open access to the available technology and expertise to the wider public by serving as a local alias in the field of human enhancement.</p>
+
+                      <p>At this moment most of the expertise and interest of Xapiens lies in the space of Brain - Machine Interfaces, however, we are interested to also make connections and learn more about other types of physical augmentation, ethics and philosophy of human enhancement, human augmentation of space exploration, gerontechnology.</p>
                     </TextBody>
                     <Subheader>
                         Topics of interest of Xapiens
