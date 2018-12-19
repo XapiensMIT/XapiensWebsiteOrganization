@@ -5,7 +5,7 @@
  *  written by Siranush Babakhanova.
  */
 
-// Libararies
+// Libraries
 import React                    from 'react';
 import firebase                 from 'firebase';
 import config                   from '../../firebase_config.json';
@@ -14,12 +14,9 @@ import initReactFastclick       from 'react-fastclick';
 import styled                   from 'styled-components';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
-
-
 // Components
 import Button                   from './Button';
 import Brandname                from './Brandname';
-
 
 // Pages
 import HomePage                 from './Homepage';
@@ -28,6 +25,7 @@ import People                   from './People';
 import Opportunities            from './Opportunities';
 import Sponsorship              from './Sponsorship';
 import Contact                  from './Contact';
+
 
 // Initialize Firebase
 firebase.initializeApp(config);

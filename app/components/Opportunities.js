@@ -1,14 +1,14 @@
-// Libararies
+// Libraries
 import React                    from 'react';
 import styled                   from 'styled-components';
 import { Link } from 'react-router-dom';
-
 
 // Components
 import Button                   from './Button';
 import Brandname                from './Brandname';
 import Navigation               from './Navigation';
 import Footer                   from './Footer';
+
 
 export default class About extends React.Component {
     constructor(props) {

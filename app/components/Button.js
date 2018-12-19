@@ -1,7 +1,8 @@
-// Libs
+// Libraries
 import React            from 'react';
 import PropTypes        from 'prop-types';
 import styled           from 'styled-components';
+
 
 /**
  * The Button component is a Compoud Component (with any Icon class) used to
