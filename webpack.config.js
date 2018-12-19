@@ -54,8 +54,14 @@ const common = {
                     {loader: "css-loader"}
                 ]
             },
+            // dp
+            // Handle *.jpeg and *.gif images with the file-loader, while
+            // completely disabling the url-loader (following commented out
+            // setting). This is to stop generating an base64 encoded file
+            // representation of an imported *.png file instead of copying
+            // the binary file. Revisit if anything breaks.
             {
-                test: /\.(png|jpg|svg)$/,
+                test: /\.(png|jpe?g|svg|gif)$/,
                 include: PATHS.images,
                 use: [
                     {
@@ -68,14 +74,14 @@ const common = {
                     }
                 ]
             },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                    {
-                        loader: 'url-loader',
-                    }
-                ]
-            },
+            // {
+            //     test: /\.(png|jpe?g|gif)$/i,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //         }
+            //     ]
+            // },
             {
                 test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [{
