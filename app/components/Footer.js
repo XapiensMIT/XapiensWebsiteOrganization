@@ -32,7 +32,7 @@ export default class Footer extends React.Component {
                 page: () => {return '/about'}
             },
             {
-                text: 'Vision',
+                text: 'Mission',
                 internal: true,
                 page: () => {return '/about'}
             },
@@ -117,23 +117,28 @@ export default class Footer extends React.Component {
             },
             {
                 text: 'Facebook',
-                internal: true,
-                page: () => {return '/contact'}
+                internal: false,
+                page: () => {return 'https://www.facebook.com/xapiensatMIT/'}
+            },
+            {
+                text: 'LinkedIn',
+                internal: false,
+                page: () => {return 'https://www.linkedin.com/company/xapiens/'}
             },
             {
                 text: 'Twitter',
-                internal: true,
-                page: () => {return '/contact'}
+                internal: false,
+                page: () => {return 'https://twitter.com/XapiensMIT'}
             },
             {
                 text: 'Slack',
-                internal: true,
-                page: () => {return '/contact'}
+                internal: false,
+                page: () => {return 'https://xapiens-mit.slack.com/'}
             },
             {
                 text: 'Email',
-                internal: true,
-                page: () => {return '/contact'}
+                internal: false,
+                page: () => {return 'mailto:xapiens_official@mit.edu'}
             },
             {
                 text: 'Mail',
@@ -141,9 +146,9 @@ export default class Footer extends React.Component {
                 page: () => {return '/contact'}
             },
             {
-                text: 'Youtube',
-                internal: true,
-                page: () => {return '/contact'}
+                text: 'YouTube',
+                internal: false,
+                page: () => {return 'https://www.youtube.com/channel/UCKCp2QLDdzA3nuhdkRkJwXQ'}
             }
         ]
         return(
@@ -161,7 +166,7 @@ export default class Footer extends React.Component {
                         fontColor={'#2B0E4C'}
                         leftcolor={'#FFFFFF'}
                         rightcolor={'#FFFFFF'}>
-                        <Brandname/>
+                        <Brandname />
                     </Button>
                 </Box>
                 <LeftFoot>
@@ -219,7 +224,7 @@ export default class Footer extends React.Component {
                                 );
                             } else {
                                 return (
-                                    <ExternalLink href="http://google.com">
+                                    <ExternalLink href={rightfooter.page()}>
                                         {rightfooter.text}
                                     </ExternalLink>
                                 );
