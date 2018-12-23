@@ -10,7 +10,7 @@ import Navigation               from './Navigation';
 import Footer                   from './Footer';
 
 // images
-import white_background         from '../assets/images/white-13.jpg';
+import white_background         from '../assets/images/white_background.jpg';
 import sponsorship_packages     from '../assets/images/sponsorship_packages.png';
 
 

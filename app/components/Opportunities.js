@@ -10,7 +10,7 @@ import Navigation               from './Navigation';
 import Footer                   from './Footer';
 
 // images
-import white_background         from '../assets/images/white-13.jpg';
+import white_background         from '../assets/images/white_background.jpg';
 
 
 export default class About extends React.Component {

@@ -10,12 +10,12 @@ import Footer                   from './Footer';
 
 // images
 import background               from '../assets/images/background.png';
-import right_plant              from '../assets/images/rightPlant.png';
-import left_plant               from '../assets/images/leftPlant-05.png';
-import vitruvian_cyborg         from '../assets/images/vitruvian-02.png';
-import space                    from '../assets/images/space-06.png';
-import brain                    from '../assets/images/brain-07.png';
-import victoria                 from '../assets/images/victoria-11.png';
+import right_plant              from '../assets/images/right_plant.png';
+import left_plant               from '../assets/images/left_plant.png';
+import vitruvian_cyborg         from '../assets/images/vitruvian_cyborg.png';
+import space                    from '../assets/images/space.png';
+import brain                    from '../assets/images/brain.png';
+import victoria                 from '../assets/images/victoria.png';
 
 
 export default class HomePage extends React.Component {

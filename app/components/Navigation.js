@@ -8,7 +8,7 @@ import Button                   from './Button';
 import Brandname                from './Brandname';
 
 // images
-import Xapiens_logo                     from '../assets/images/logoo.png';
+import logo                     from '../assets/images/logo.png';
 
 
 export default class Navigation extends React.Component {
@@ -51,7 +51,7 @@ export default class Navigation extends React.Component {
             <Container>
                 <Link to={'/about'}>
                     <Illustration
-                        src={Xapiens_logo}
+                        src={logo}
                         alt='Xapiens logo' />
                 </Link>
                 {
