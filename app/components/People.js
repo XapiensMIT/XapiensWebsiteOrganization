@@ -88,7 +88,7 @@ export default class HomePage extends React.Component {
         return(
             <Container
                 background={"https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fwhite-13.jpg?alt=media&token=e231f298-ff5f-4a13-896a-b3712a0e4287"}>
-                <Navigation/>
+                <Navigation />
                 {
                     blocks.map(block => {
                         return (
@@ -126,7 +126,7 @@ export default class HomePage extends React.Component {
                         );
                     })
                 }
-                <Footer/>
+                <Footer />
             </Container>
         );
     }

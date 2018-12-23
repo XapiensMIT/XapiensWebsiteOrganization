@@ -34,7 +34,7 @@ export default class About extends React.Component {
         return(
             <Container
                 background={white_background}>
-                <Navigation/>
+                <Navigation />
                 <Block>
                     <Header> Opportunities </Header>
                     <Subheader>
@@ -93,11 +93,10 @@ The long-term goal of the group, going beyond probing and modulation, is to enab
                             <ExternalLink href='https://www.media.mit.edu/groups/nano-cybernetic-biotrek/overview/'>
                                 Nano-Cybernetic Biotrek
                             </ExternalLink>
-
                         </Button>
                     </Box>
                 </Block>
-                <Footer/>
+                <Footer />
 
             </Container>
         );

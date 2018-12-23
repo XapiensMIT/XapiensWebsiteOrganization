@@ -34,9 +34,9 @@ export default class About extends React.Component {
         return(
             <Container
                 background={white_background}>
-                <Navigation/>
+                <Navigation />
                 <Block>
-                    <Header> Contacts </Header>
+                    <Header> Contact </Header>
                     <TextBody>
                         Xapiens is MIT’s first interdisciplinary collective seeking to explore the technical and ethical issues surrounding the use of technology to overcome the limitations of the human mind & body.<br /><br />
                     </TextBody>
@@ -66,7 +66,6 @@ export default class About extends React.Component {
                             <Link to={'/contact'}>
                                 Become a member
                             </Link>
-
                         </Button>
                     </Box>
                     <TextBody>
@@ -80,7 +79,7 @@ export default class About extends React.Component {
                         </ExternalLink>
                     </TextBody>
                 </Block>
-                <Footer/>
+                <Footer />
 
             </Container>
         );

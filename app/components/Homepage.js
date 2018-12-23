@@ -101,7 +101,7 @@ export default class HomePage extends React.Component {
         return(
             <Container
                 background={background}>
-                <Navigation/>
+                <Navigation />
                 <Content>
                     {
                         blocks.map(block => {
@@ -142,7 +142,7 @@ export default class HomePage extends React.Component {
                         })
                     }
                 </Content>
-                <Footer/>
+                <Footer />
             </Container>
         );
     }

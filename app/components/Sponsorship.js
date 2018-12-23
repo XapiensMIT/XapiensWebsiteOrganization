@@ -35,7 +35,7 @@ export default class About extends React.Component {
         return(
             <Container
                 background={white_background}>
-                <Navigation/>
+                <Navigation />
                 <Block>
                     <Header> Sponsorship </Header>
                     <TextBody>
@@ -68,11 +68,10 @@ export default class About extends React.Component {
                             <Link to={'/contact'}>
                                 Become a sponsor
                             </Link>
-
                         </Button>
                     </Box>
                 </Block>
-                <Footer/>
+                <Footer />
 
             </Container>
         );

@@ -25,7 +25,6 @@ export default class Footer extends React.Component {
     }
 
     render() {
-
         let leftfooter = [
             {
                 text: 'About',

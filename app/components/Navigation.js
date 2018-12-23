@@ -48,7 +48,7 @@ export default class Navigation extends React.Component {
 
         return(
             <Container>
-                <Link to={'/about'}>
+                <Link to={'/'}>
                     <Illustration
                         src={logo}
                         alt='Xapiens logo' />
