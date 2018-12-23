@@ -9,14 +9,9 @@
 import React                    from 'react';
 import firebase                 from 'firebase';
 import config                   from '../../firebase_config.json';
-import uuid                     from 'uuid';
 import initReactFastclick       from 'react-fastclick';
 import styled                   from 'styled-components';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-
-// Components
-import Button                   from './Button';
-import Brandname                from './Brandname';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Pages
 import HomePage                 from './Homepage';

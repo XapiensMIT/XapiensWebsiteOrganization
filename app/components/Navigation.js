@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 // Components
 import Button                   from './Button';
-import Brandname                from './Brandname';
 
 // images
 import logo                     from '../assets/images/logo.png';

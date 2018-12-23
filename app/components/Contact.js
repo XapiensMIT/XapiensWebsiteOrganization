@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 // Components
 import Button                   from './Button';
-import Brandname                from './Brandname';
 import Navigation               from './Navigation';
 import Footer                   from './Footer';
 
