@@ -1,7 +1,7 @@
 // Libs
 import React                            from 'react';
 import ReactDOM                         from 'react-dom';
-import App                              from './components/App.jsx';
+import App                              from './components/App.js';
 import {ThemeProvider}                  from 'styled-components';
 import {ThemeContext, theme}            from './theme-context';
 
@@ -9,7 +9,7 @@ import {ThemeContext, theme}            from './theme-context';
 import './global-styles.js';
 
 /**
- * RenderDOM connects the root JSX logic (App.jsx) to the root HTML id, and
+ * RenderDOM connects the root JSX logic (App.js) to the root HTML id, and
  * imports render
  * @param  {[JSX File]} <App/> Root of the application
  */

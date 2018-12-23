@@ -21,7 +21,7 @@ import DefinitionsDrawer        from './DefinitionsDrawer';
 import CompletionMeter          from './CompletionMeter';
 import PauseLightPurple         from '../../assets/images/icons/pause-lightpurple-cursor.png';
 import PausePurple              from '../../assets/images/icons/pause-purple-cursor.png';
-import Loader                   from '../Loader.jsx';
+import Loader                   from '../Loader.js';
 
 /**
  * The Viewport component is a component used to
