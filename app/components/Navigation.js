@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import Button                   from './Button';
 import Brandname                from './Brandname';
 
+// images
+import Xapiens_logo                     from '../assets/images/logoo.png';
+
 
 export default class Navigation extends React.Component {
     constructor(props) {
@@ -48,7 +51,7 @@ export default class Navigation extends React.Component {
             <Container>
                 <Link to={'/about'}>
                     <Illustration
-                        src="https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/logoo.png?alt=media&token=388eea1b-c414-44f6-83f1-e85a9b955dbc"
+                        src={Xapiens_logo}
                         alt='Xapiens logo' />
                 </Link>
                 {
