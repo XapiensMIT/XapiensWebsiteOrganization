@@ -1,14 +1,16 @@
-// Libararies
+// Libraries
 import React                    from 'react';
 import styled                   from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 // Components
 import Button                   from './Button';
-import Brandname                from './Brandname';
 import Navigation               from './Navigation';
 import Footer                   from './Footer';
+
+// images
+import white_background         from '../assets/images/white_background.jpg';
+
 
 export default class About extends React.Component {
     constructor(props) {
@@ -31,8 +33,8 @@ export default class About extends React.Component {
 
         return(
             <Container
-                background={"https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fwhite-13.jpg?alt=media&token=e231f298-ff5f-4a13-896a-b3712a0e4287"}>
-                <Navigation/>
+                background={white_background}>
+                <Navigation />
                 <Block>
                     <Header> Opportunities </Header>
                     <Subheader>
@@ -91,11 +93,10 @@ The long-term goal of the group, going beyond probing and modulation, is to enab
                             <ExternalLink href='https://www.media.mit.edu/groups/nano-cybernetic-biotrek/overview/'>
                                 Nano-Cybernetic Biotrek
                             </ExternalLink>
-
                         </Button>
                     </Box>
                 </Block>
-                <Footer/>
+                <Footer />
 
             </Container>
         );

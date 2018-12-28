@@ -1,14 +1,16 @@
-// Libararies
+// Libraries
 import React                    from 'react';
 import styled                   from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 // Components
 import Button                   from './Button';
-import Brandname                from './Brandname';
 import Navigation               from './Navigation';
 import Footer                   from './Footer';
+
+// images
+import white_background         from '../assets/images/white_background.jpg';
+
 
 export default class About extends React.Component {
     constructor(props) {
@@ -31,10 +33,10 @@ export default class About extends React.Component {
 
         return(
             <Container
-                background={"https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fwhite-13.jpg?alt=media&token=e231f298-ff5f-4a13-896a-b3712a0e4287"}>
-                <Navigation/>
+                background={white_background}>
+                <Navigation />
                 <Block>
-                    <Header>Vision</Header>
+                    <Header> Mission </Header>
                     <TextBody>
                       <p>Xapiens aims to provide a community for students who have an interest in transhumanism through social events, seminars, technical projects and outreach programs. We aim to empower the members of the MIT community to learn, participate and make an impact in the many fields of human enhancement.</p>
 
@@ -70,7 +72,6 @@ export default class About extends React.Component {
                             <Link to={'/contact'}>
                                 Become a member
                             </Link>
-
                         </Button>
                     </Box>
                     <TextBody>
@@ -84,7 +85,7 @@ export default class About extends React.Component {
                         </ExternalLink>
                     </TextBody>
                 </Block>
-                <Footer/>
+                <Footer />
 
             </Container>
         );

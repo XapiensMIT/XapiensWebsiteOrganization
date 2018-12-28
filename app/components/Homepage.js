@@ -1,14 +1,21 @@
-// Libararies
+// Libraries
 import React                    from 'react';
 import styled                   from 'styled-components';
 import { Link } from 'react-router-dom';
-
 
 // Components
 import Button                   from './Button';
 import Navigation               from './Navigation';
 import Footer                   from './Footer';
 
+// images
+import background               from '../assets/images/background.png';
+import right_plant              from '../assets/images/right_plant.png';
+import left_plant               from '../assets/images/left_plant.png';
+import vitruvian_cyborg         from '../assets/images/vitruvian_cyborg.png';
+import space                    from '../assets/images/space.png';
+import brain                    from '../assets/images/brain.png';
+import victoria                 from '../assets/images/victoria.png';
 
 
 export default class HomePage extends React.Component {
@@ -37,11 +44,11 @@ export default class HomePage extends React.Component {
                 illustration:
                 {
                     xposition: 'left',
-                    source: "https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fvitruvian-02.png?alt=media&token=145cc798-acf1-4469-96ad-e7d7958c1df3",
+                    source: vitruvian_cyborg,
                     alt: 'Vitruvian Cyborg graphic design by Siranush Babakhanova'
                  },
                 buttonText: 'Subscribe and join',
-                supplementaryImage: 'https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2FrightPlant.png?alt=media&token=c61bf58a-a997-4d78-aac2-19c300f9e365',
+                supplementaryImage: right_plant,
                 page: () => {return '/contact'}
             },
             {
@@ -52,11 +59,11 @@ export default class HomePage extends React.Component {
                 illustration:
                 {
                     xposition: 'right',
-                    source: "https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fspace-06.png?alt=media&token=f088bfba-5e64-4409-a110-66b219f30fad",
+                    source: space,
                     alt: 'beyond the cradle cyborg looking into the deep space'
                  },
                 buttonText: 'Learn more',
-                supplementaryImage: 'https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2FleftPlant-05.png?alt=media&token=fea4b9ca-e73a-4abf-bdc9-3dafde73aa15',
+                supplementaryImage: left_plant,
                 page: () => {return '/about'}
             },
             {
@@ -67,11 +74,11 @@ export default class HomePage extends React.Component {
                 illustration:
                 {
                     xposition: 'left',
-                    source: "https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fbrain-07.png?alt=media&token=daafbc22-bd7b-4bfc-b9c1-e126a0e9ea01",
+                    source: brain,
                     alt: 'neurotechnology and electronics, a brain as a chip golden and violet'
                  },
                 buttonText: 'Learn more',
-                supplementaryImage: 'https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2FrightPlant.png?alt=media&token=c61bf58a-a997-4d78-aac2-19c300f9e365',
+                supplementaryImage: right_plant,
                 page: () => {return '/opportunities'}
             },
             {
@@ -82,19 +89,19 @@ export default class HomePage extends React.Component {
                 illustration:
                 {
                     xposition: 'right',
-                    source: "https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fvictoria-11.png?alt=media&token=4819dcbd-472d-4b01-a97e-d568ab167c8e",
+                    source: victoria,
                     alt: 'Victoria Modesta, bionic artist, human augmentation example'
                  },
                 buttonText: 'Learn more',
-                supplementaryImage: 'https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2FleftPlant-05.png?alt=media&token=fea4b9ca-e73a-4abf-bdc9-3dafde73aa15',
+                supplementaryImage: left_plant,
                 page: () => {return '/opportunities'}
             }
         ];
 
         return(
             <Container
-                background={"https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fbackground.jpg?alt=media&token=c2907adb-556d-423c-b1fd-7fafcf156348"}>
-                <Navigation/>
+                background={background}>
+                <Navigation />
                 <Content>
                     {
                         blocks.map(block => {
@@ -135,7 +142,7 @@ export default class HomePage extends React.Component {
                         })
                     }
                 </Content>
-                <Footer/>
+                <Footer />
             </Container>
         );
     }

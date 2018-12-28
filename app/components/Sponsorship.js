@@ -1,14 +1,17 @@
-// Libararies
+// Libraries
 import React                    from 'react';
 import styled                   from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 // Components
 import Button                   from './Button';
-import Brandname                from './Brandname';
 import Navigation               from './Navigation';
 import Footer                   from './Footer';
+
+// images
+import white_background         from '../assets/images/white_background.jpg';
+import sponsorship_packages     from '../assets/images/sponsorship_packages.png';
+
 
 export default class About extends React.Component {
     constructor(props) {
@@ -31,29 +34,26 @@ export default class About extends React.Component {
 
         return(
             <Container
-                background={"https://firebasestorage.googleapis.com/v0/b/xapiens-website.appspot.com/o/resources%2Fwhite-13.jpg?alt=media&token=e231f298-ff5f-4a13-896a-b3712a0e4287"}>
-                <Navigation/>
+                background={white_background}>
+                <Navigation />
                 <Block>
                     <Header> Sponsorship </Header>
                     <TextBody>
-                        We would like to invite organizations to support the continued success of the Xapiens Group at MIT. In the past 2 month, we have hosted over 10 events, engaged with hundred of members of the community, and strengthened the bonds between MIT and the surrounding industry in human augmentation. Your support will help us to continue these programs and build new ones.<br />
+                      <p><strong>We would like to invite organizations to support the continued success of Xapiens.</strong> In the past 3 months, we have hosted over 10 events, engaged with hundreds of members of the community, and strengthened the bonds between MIT, academia and the surrounding industry in human augmentation. Your support will help us to continue these programs and build new ones.</p>
+                      <p>We are happy to work with our sponsors to create custom events at MIT that may consist of keynote talks from management or scientists, breakout sessions to engage in smaller groups, educational workshops, and product demos.</p>
                     </TextBody>
                     <Subheader>
                         Benefits to Sponsors
                     </Subheader>
+
+                    <img
+                        src={sponsorship_packages}
+                        alt="Sponsorship Packages"
+                        style={{width: 900}}
+                    />
+
                     <TextBody>
-                        We are happy to work with our sponsors to create custom events at MIT. These may consist of:<br/><br/>
-
-	keynote talks from management or scientists<br/>
-	breakout sessions to engage in smaller groups<br/>
-	educational workshops<br/>
-	product demos<br/><br/>
-
-We will acknowledge your sponsorship on our website, emails, and all events that your contribution goes towards.<br/><br/>
-
-Help us as we build a more vibrant human augmentation community by connecting industry, academia and MIT. We would love to hear from you if you are interested in learning more and supporting our organization.<br/>
-
-
+                      <p>We would love to hear from you if you are interested in learning more and supporting our organization. Contact us at <a href="mailto:xapiens_officers@mit.edu">xapiens_officers@mit.edu</a>.</p>
                     </TextBody>
                     <Box>
                         <Button
@@ -68,11 +68,10 @@ Help us as we build a more vibrant human augmentation community by connecting in
                             <Link to={'/contact'}>
                                 Become a sponsor
                             </Link>
-
                         </Button>
                     </Box>
                 </Block>
-                <Footer/>
+                <Footer />
 
             </Container>
         );
