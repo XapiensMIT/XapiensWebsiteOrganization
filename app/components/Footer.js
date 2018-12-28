@@ -138,7 +138,7 @@ export default class Footer extends React.Component {
             {
                 text: 'Email',
                 internal: false,
-                page: () => {return 'mailto:xapiens_official@mit.edu'}
+                page: () => {return 'mailto:xapiens_officers@mit.edu'}
             },
             {
                 text: 'Mail',
